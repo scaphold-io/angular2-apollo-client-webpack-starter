@@ -5,6 +5,16 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    text-align: center;
+}
+
+.img-container {
+    text-align: center;
+    img {
+        width: 90px;
+        height: 90px;
+        margin: 15px;
+    }
 }
 
 .authentication-container {

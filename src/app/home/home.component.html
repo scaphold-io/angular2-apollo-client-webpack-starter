@@ -1,4 +1,12 @@
 <div class="home">
+  <h1 class="title">The Angular2 & Apollo Client Starter Kit</h1>
+  <h2>A GraphQL powered Angular2 application ready to be made awesome.</h2>
+  <div class="img-container">
+    <a target="_blank" href="https://angular.io"><img src="https://angular.io/resources/images/logos/standard/shield-large.png" alt="Angular2"></a>
+    <a target="_blank" href="https://scaphold.io"><img src="https://scaphold.io/images/scaphold-logo-90x90.png" alt="Scaphold"></a>
+    <a target="_blank" href="http://docs.apollostack.com/apollo-client/index.html"><img src="http://docs.apollostack.com/logo/square.png" alt="Apollo Client"></a>
+  </div>
+  <h3>Brought to you by <a target="_blank" [href]="url">scaphold.io</a></h3>
   <section class="section-auth">
     <div class="authentication-container" *ngIf="!auth.credential.token">
       <scaphold-register-form class="panel"></scaphold-register-form>

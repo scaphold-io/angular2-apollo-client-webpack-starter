@@ -49,7 +49,7 @@ __build__/**
 
 # Doc #
 /doc/
-/README_html/
+readme.html
 
 # IDE #
 .idea/

@@ -1,5 +1,411 @@
 <div class="panel">
-  <markdown>
-    # README
-  </markdown>
+  <h1>
+    <a id="user-content-angular2-apollo-client-webpack-starter" class="anchor" href="#angular2-apollo-client-webpack-starter"
+      aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>angular2-apollo-client-webpack-starter</h1>
+
+  <p>
+    <a href="https://david-dm.org/scaphold-io/angular2-apollo-client-webpack-starter#info=dependencies"><img src="https://camo.githubusercontent.com/8eee19c1748a459805e767e032bfbf553e116b9c/68747470733a2f2f64617669642d646d2e6f72672f73636170686f6c642d696f2f616e67756c6172322d61706f6c6c6f2d636c69656e742d7765627061636b2d737461727465722f7374617475732e737667"
+        alt="Dependency Status" data-canonical-src="https://david-dm.org/scaphold-io/angular2-apollo-client-webpack-starter/status.svg"
+        style="max-width:100%;"></a>
+    <a href="https://david-dm.org/scaphold-io/angular2-apollo-client-webpack-starter#info=devDependencies"><img src="https://camo.githubusercontent.com/2982bfef51a26d31583ebce438cb5302fcc8fff1/68747470733a2f2f64617669642d646d2e6f72672f73636170686f6c642d696f2f616e67756c6172322d61706f6c6c6f2d636c69656e742d7765627061636b2d737461727465722f6465762d7374617475732e737667"
+        alt="devDependency Status" data-canonical-src="https://david-dm.org/scaphold-io/angular2-apollo-client-webpack-starter/dev-status.svg"
+        style="max-width:100%;"></a>
+  </p>
+
+  <p>A graphql ready starter kit for <a href="https://angular.io/">Angular2</a> using <a href="https://github.com/apollostack/apollo-client">Apollo Client</a>    and Webpack. This starter kit is built to seamlessly integrate with the <a href="https://scaphold.io">scaphold.io</a>'s
+    powerful GraphQL-as-a-Service platform.</p>
+
+  <p>Out of the box, the application handles authentication and exhibits pagination using GraphQL connections. The template
+    also comes packed with a few other goodies.</p>
+
+  <h2>
+    <a id="user-content-table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table
+    of contents</h2>
+
+  <ul>
+    <li><a href="#quick-start">Quick start</a></li>
+    <li><a href="#whats-included">What's included</a></li>
+    <li><a href="#project-structure">Project structure</a></li>
+    <li>
+      <a href="#documentation">Documentation</a>
+
+      <ul>
+        <li><a href="#apollo-client">Apollo Client</a></li>
+        <li><a href="#scaphold">Scaphold</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#developing">Developing</a>
+
+      <ul>
+        <li><a href="#installing">Installing</a></li>
+        <li><a href="#running-the-app">Running the app</a></li>
+        <li><a href="#building">Building</a></li>
+        <li><a href="#generating-documentation">Generating Documentation</a></li>
+        <li>
+          <a href="#testing">Testing</a> </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>
+    <a id="user-content-quick-start" class="anchor" href="#quick-start" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quick
+    start</h2>
+
+  <ul>
+    <li>Go to <a href="https://scaphold.io">scaphold.io</a> and create an account.</li>
+    <li>Create an application and get your GraphQL API's url from the dropdown in the nav bar.
+
+      <ul>
+        <li>A Scaphold app comes with a customizeable GraphQL API that you can immediately use to start building your Angular2
+          application.</li>
+        <li>Each API contains a default <code>User</code> type that handles authentication necessities like password encryption
+          out of the box. This template is built to seamlessly work with a fresh <a href="https://scaphold.io">scaphold.io</a>          app.</li>
+      </ul>
+    </li>
+    <li>Setup this starter kit</li>
+  </ul>
+
+  <div class="highlight highlight-source-shell">
+    <pre><span class="pl-c"># clone our repo</span> $ git clone https://github.com/scaphold-io/angular2-apollo-client-webpack-starter.git
+      my-app
+
+      <span class="pl-c"># update /my-app/src/config.ts with your scaphold api url</span> $ <span class="pl-c1">cd</span>      my-app $ vi src/config.ts
+
+      <span class="pl-c"># install the dependencies with npm</span> $ npm install
+      <span class="pl-c"># Your scaphold url will look something like https://api.scaphold.io/graphql/my-awesome-app-alias</span>
+
+      <span class="pl-c"># start the server</span> $ npm start</pre>
+  </div>
+
+  <p>Your application is now hooked up to a production GraphQL API and is ready for you to build an awesome app.</p>
+
+  <p>Go to <a href="http://localhost:8080">http://localhost:8080</a> to start using your API.</p>
+
+  <h2>
+    <a id="user-content-whats-included" class="anchor" href="#whats-included" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What's
+    included?</h2>
+
+  <ul>
+    <li>Apollo Client - A powerful, easy to use GraphQL client.</li>
+    <li>Webpack - A popular, well designed module bundler for JavaScript projects.</li>
+    <li>ES6, and ES7 support with babel.</li>
+    <li>Source maps for debugging.</li>
+    <li>Development server with live reload via webpack-dev-server.</li>
+    <li>Production builds with cache busting.</li>
+    <li>Unit testing via karma and jasmine.</li>
+    <li>Integration testing via protractor.</li>
+    <li>Code coverage when tests are run.</li>
+  </ul>
+
+  <h2>
+    <a id="user-content-project-structure" class="anchor" href="#project-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project
+    Structure</h2>
+
+  <pre><code>bootangular2-apollo-webpack-starter/
+├── src/                # Project Root
+│   ├── app/            # Angular2 Application
+│   │   ├── about/      # about, home, login, register all contain Angular components
+│   │   ├── home/
+│   │   ├── login/
+│   │   ├── register/
+│   │   ├── shared/              # shared contains Angular services. e.g. auth.service.ts
+│   │   ├── app.component.html   # Each component has a X.component.html template file
+│   │   ├── app.component.scss   # Component specific sass styling
+│   │   ├── app.component.ts     # The component controller
+│   │   ├── app.component.e2e-spec.js   # Protractor integration tests
+│   │   ├── app.component.spec.ts       # Karma unit tests
+│   │   ├── app.routes.ts        # Angular application router
+│   │   └── client.ts/           # Apollo client initialization
+│   ├── public/          # Public static assets
+│   │   ├── img/
+│   │   └── index.html
+│   ├── style/           # Application wide sass styling
+│   │   └── app.scss
+│   ├── config.ts        # Contains your API's url.
+│   ├── main.ts          # Application entry point
+│   ├── polyfills.ts    
+│   └── vendor.ts        # Update application dependencies here
+├── typings/             # Contains TypeScript definitions
+│   ├── globals/
+│   ├── modules/
+│   └── index.d.ts
+├── package.json
+├── karma-shim.js
+├── karma-conf.js
+├── protractor.conf.js
+├── tsconfig.json
+├── tslint.json
+├── typedoc.json
+├── typings.json
+├── webpack.config.js
+├── LICENSE
+└── README.md
+</code></pre>
+
+  <h2>
+    <a id="user-content-documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
+
+  <h3>
+    <a id="user-content-apollo-client" class="anchor" href="#apollo-client" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Apollo
+    Client</h3>
+
+  <p>Apollo Client is an easy to use, framework agnostic GraphQL client library that makes it easy to integrate GraphQL with
+    your app. In our experience it can be a little easier to work with than Relay and allows you to use non-React frameworks
+    like Angular 2! Under the hood, Apollo Client uses the Redux state container for caching so that your queries run quickly
+    and your data is always in sync.</p>
+
+  <h4>
+    <a id="user-content-the-apollo-decorator" class="anchor" href="#the-apollo-decorator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The
+    Apollo Decorator</h4>
+
+  <p>Angular2 uses decorator functions to attach metadata to classes. Components use @Component, services use @Injectable, and
+    classes that need GraphQL functionality use @Apollo. Take a look at the HomeComponent in <code>src/home/home.component.ts</code>.</p>
+
+  <div class="highlight highlight-source-js">
+    <pre>@<span class="pl-en">Apollo</span>({ client,
+      <span class="pl-en">queries</span>(<span class="pl-smi">context</span>) {
+      <span class="pl-k">return</span> { data
+      <span class="pl-k">:</span> { query
+      <span class="pl-k">:</span> gql<span class="pl-s"><span class="pl-pds">`</span></span>
+      <span class="pl-s">          query AllUsers($first: Int, $after: String, $last: Int, $before: String) {</span>
+      <span class="pl-s">            viewer {</span>
+      <span class="pl-s">              allUsers(first: $first, after: $after, last: $last, before: $before) {</span>
+      <span class="pl-s">                edges {</span>
+      <span class="pl-s">                  node {</span>
+      <span class="pl-s">                    id</span>
+      <span class="pl-s">                    username</span>
+      <span class="pl-s">                    lastLogin</span>
+      <span class="pl-s">                    createdAt</span>
+      <span class="pl-s">                    modifiedAt</span>
+      <span class="pl-s">                  }</span>
+      <span class="pl-s">                  cursor</span>
+      <span class="pl-s">                }</span>
+      <span class="pl-s">                pageInfo {</span>
+      <span class="pl-s">                  hasNextPage</span>
+      <span class="pl-s">                  hasPreviousPage</span>
+      <span class="pl-s">                }</span>
+      <span class="pl-s">              }</span>
+      <span class="pl-s">            }</span>
+      <span class="pl-s">          }</span>
+      <span class="pl-s">        <span class="pl-pds">`</span></span>, variables
+      <span class="pl-k">:</span> { first
+      <span class="pl-k">:</span> <span class="pl-smi">context</span>.<span class="pl-smi">first</span>, after
+      <span class="pl-k">:</span> <span class="pl-smi">context</span>.<span class="pl-smi">after</span>, last
+      <span class="pl-k">:</span> <span class="pl-smi">context</span>.<span class="pl-smi">last</span>, before
+      <span class="pl-k">:</span> <span class="pl-smi">context</span>.<span class="pl-smi">before</span> }, forceFetch
+      <span class="pl-k">:</span> <span class="pl-c1">false</span>, returnPartialData
+      <span class="pl-k">:</span> <span class="pl-c1">true</span>, pollInterval
+      <span class="pl-k">:</span> <span class="pl-c1">10000</span> } }; } })
+    </pre>
+  </div>
+
+  <p>The Apollo decorator allows you to define queries and mutations and make them reactive so that your data stays up to date
+    as properties in your component class change. @Apollo takes a single object with the keys <code>client</code>, <code>queries</code>,
+    <code>mutations</code> as a parameter and returns an object that maps to properties in the decorated class.</p>
+
+  <p>For the example above note how we have property <code>data: any</code> in our HomeCompnoent class. We can access the data
+    returned by the query defined in the @Apollo decorator via the <code>data</code> property. Also note how the queries
+    function in the parameter exposes a single <code>context</code> argument. This <code>context</code> points to the scope
+    of the decorated class so that you can directly reference your component's state properties. This is extra awesome because
+    Apollo Client automatically makes the queries defined in the @Apollo decorator reactive. This means that when properties
+    in your class change so will your data. Apollo implements a bunch of cool tricks to make this efficient such that it
+    only issues new API requests when needed and uses cached data in Redux for the rest.</p>
+
+  <p>You can find more documentation here for <a href="http://docs.apollostack.com/apollo-client/index.html">Apollo Client</a>    and <a href="http://docs.apollostack.com/apollo-client/angular2.html">Angular2Apollo</a> (a native wrapper for Angular2)</p>
+
+  <h2>
+    <a id="user-content-scaphold" class="anchor" href="#scaphold" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+    <a
+      href="https://scaphold.io">Scaphold</a>
+  </h2>
+
+  <p>Scaphold is a GraphQL-as-a-Service platform that makes it really easy to create production backends using GraphQL. Their
+    web interface greatly simplifies the process of defining a GraphQL schema, integrations make adding other services like
+    social authentication, stripe payments, email support, and push notifications a breeze, and the data exploration tools
+    let you comb through your data without having to write GraphQL.</p>
+
+  <p>This template was created to work seamlessly with a fresh <a href="https://scaphold.io">scaphold.io</a> application and
+    already has user registration and authentication configured for you. The HomeComponent <code>src/home/home.component.ts</code>    also includes and example of how you can easily implement pagination using Connections on Scaphold. </p>
+
+  <h3>
+    <a id="user-content-pagination" class="anchor" href="#pagination" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pagination</h3>
+
+  <p>A necessary part of any application is the ability to paginate through data in arbitrarily sized <em>pages</em>. To do
+    this in GraphQL, we use <em>Connections</em>. A <em>Connection</em> is a standards based approach to pagination that
+    offers a efficient and straigh-forward pagination mechanism.</p>
+
+  <p>A GraphQL connection field takes 4 arguments</p>
+
+  <ul>
+    <li>
+      <code>first</code>: An integer specifying the count of objects following the <code>after</code> cursor in a sequence
+      that should be included in the response.</li>
+    <li>
+      <code>after</code>: A string 'cursor'. This is an opaque identifier that points to an object in a sequence. It specifies
+      where our page slice should start in a sequence and is used with <code>first</code>. Results are bounds-exclusive and
+      will start strictly after this cursor.</li>
+    <li>
+      <code>last</code>: An integer specifying the count of objects precursing the <code>before</code> cursor in a sequence
+      that should be included in the response.</li>
+    <li>
+      <code>before</code>: A string 'cursor'. This is an opaque identifier that points to an object in a sequence. It specifies
+      where our page slice should end in a sequence and is used with <code>last</code>. Results are bounds-exclusive and
+      will start strictly before this cursor.</li>
+  </ul>
+
+  <blockquote>
+    <p>Note: We advise you only use (<code>first</code> and <code>after</code>) OR (<code>last</code> and <code>before</code>)
+      at any given time. Although you technically can use both at the same time it can lead to unexpected results. See the
+      <a href="https://facebook.github.io/relay/graphql/connections.htm">Cursor Connections Spec</a> for more details.</p>
+  </blockquote>
+
+  <p>The HomeComponent defines the following GraphQL query in the @Apollo decorator function. </p>
+
+  <pre><code>query AllUsers($first: Int, $after: String, $last: Int, $before: String) {
+    viewer {
+        allUsers(first: $first, after: $after, last: $last, before: $before) {
+            edges {
+                node {
+                    id
+                    username
+                    lastLogin
+                    createdAt
+                    modifiedAt
+                }
+                cursor
+            }
+            pageInfo {
+                hasNextPage
+                hasPreviousPage
+            }
+        }
+    }
+}
+</code></pre>
+
+  <p>It also binds the connection arguments to 4 properties in the HomeComponent class.</p>
+
+  <pre><code>variables: {
+  first: context.first,
+  after: context.after,
+  last: context.last,
+  before: context.before
+}
+</code></pre>
+
+  <p>With this setup, we are able to immediately start paginating through our User data by changing the <code>first</code>,
+    <code>after</code>, <code>last</code>, and <code>before</code> properties in the HomeComponent class. Apollo Client automatically
+    handles making our query reactive and will make sure the presented data stays in sync with our class properties.</p>
+
+  <div class="highlight highlight-source-js">
+    <pre><span class="pl-k">const</span> <span class="pl-c1">edgeCount</span> <span class="pl-k">=</span> <span class="pl-v">this</span>.
+      <span
+        class="pl-c1">data</span>.<span class="pl-smi">viewer</span>.<span class="pl-smi">allUsers</span>.<span class="pl-smi">edges</span>.
+        <span
+          class="pl-c1">length</span>;
+          <span class="pl-k">const</span> <span class="pl-c1">afterCursor</span> <span class="pl-k">=</span> (edgeCount
+          <span
+            class="pl-k">&gt;</span> <span class="pl-c1">0</span>) <span class="pl-k">?</span> <span class="pl-v">this</span>.<span class="pl-c1">data</span>.
+            <span
+              class="pl-smi">viewer</span>.<span class="pl-smi">allUsers</span>.<span class="pl-smi">edges</span>[edgeCount <span class="pl-k">-</span>              <span class="pl-c1">1</span>][<span class="pl-s"><span class="pl-pds">'</span>cursor<span class="pl-pds">'</span></span>]
+              <span class="pl-k">:</span> <span class="pl-c1">null</span>;
+              <span class="pl-v">this</span>.<span class="pl-smi">after</span> <span class="pl-k">=</span> afterCursor;
+              <span class="pl-v">this</span>.<span class="pl-smi">first</span> <span class="pl-k">=</span> <span class="pl-v">this</span>.
+              <span
+                class="pl-smi">defaultPageSize</span>;
+                <span class="pl-v">this</span>.<span class="pl-smi">before</span> <span class="pl-k">=</span> <span class="pl-c1">null</span>;
+                <span class="pl-v">this</span>.<span class="pl-smi">last</span> <span class="pl-k">=</span> <span class="pl-c1">null</span>;</pre>
+  </div>
+
+  <p>Try out different values to experiment with Cursor Connection pagination.</p>
+
+  <h2>
+    <a id="user-content-installing" class="anchor" href="#installing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installing</h2>
+
+  <ul>
+    <li>
+      <code>fork</code> this repo</li>
+    <li>
+      <code>clone</code> your fork</li>
+    <li>
+      <code>npm install</code> to install all dependencies</li>
+  </ul>
+
+  <p>What you need to run this app:</p>
+
+  <ul>
+    <li>
+      <code>node</code> and <code>npm</code>
+    </li>
+    <li>We tested this template with Node (<code>v4.x</code>+) and NPM (<code>3.x</code>+) but others will most likely work as
+      well</li>
+  </ul>
+
+  <h2>
+    <a id="user-content-running-the-app" class="anchor" href="#running-the-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running
+    the app</h2>
+
+  <p>After you have installed all dependencies you can now run the app with:</p>
+
+  <div class="highlight highlight-source-shell">
+    <pre>npm start</pre>
+  </div>
+
+  <p>It will start a local server using <code>webpack-dev-server</code> which will watch, build (in-memory), and reload for
+    you. The port will be displayed to you as <code>http://localhost:8080</code>.</p>
+
+  <h2>
+    <a id="user-content-developing" class="anchor" href="#developing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Developing</h2>
+
+  <h3>
+    <a id="user-content-building" class="anchor" href="#building" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building</h3>
+
+  <ul>
+    <li>single run: <code>npm run build</code>
+    </li>
+    <li>build files and watch for changes: <code>npm run watch</code>
+    </li>
+  </ul>
+
+  <h3>
+    <a id="user-content-generating-documentation" class="anchor" href="#generating-documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Generating
+    Documentation</h3>
+
+  <ul>
+    <li><code>npm run docs</code></li>
+    <li>This uses <a href="http://typedoc.io/">TypeDoc</a> and understand JavaDoc style tags </li>
+  </ul>
+
+  <h2>
+    <a id="user-content-testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing</h2>
+
+  <h4>
+    <a id="user-content-1-unit-tests" class="anchor" href="#1-unit-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.
+    Unit Tests</h4>
+
+  <ul>
+    <li>single run: <code>npm test</code>
+    </li>
+    <li>live mode: <code>npm run test-watch</code>
+    </li>
+  </ul>
+
+  <h4>
+    <a id="user-content-2-integration-tests" class="anchor" href="#2-integration-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.
+    Integration Tests</h4>
+
+  <ul>
+    <li>single run: <code>npm e2e</code>
+    </li>
+    <li>live mode: <code>npm e2e-live</code>
+    </li>
+  </ul>
+
+  <h2>
+    <a id="user-content-contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+  <p>Please feel free to fork this project and contribute. Send us a pull request and we'd be happy to merge :)</p>
+
+
 </div>
