@@ -49,6 +49,7 @@ __build__/**
 
 # Doc #
 /doc/
+/README_html/
 
 # IDE #
 .idea/

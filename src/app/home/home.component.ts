@@ -30,6 +30,7 @@ import client from '../client';
                     username
                     lastLogin
                     createdAt
+                    modifiedAt
                   }
                   cursor
                 }
@@ -82,8 +83,8 @@ export class HomeComponent implements OnInit {
                                 this.last === null;
     if (mayHavePreviousPage) {
       const edgeCount = this.data.viewer.allUsers.edges.length;
-      const firstCursor = (edgeCount > 0) ? this.data.viewer.allUsers.edges[0]['cursor'] : null;
-      this.before = firstCursor;
+      const beforeCursor = (edgeCount > 0) ? this.data.viewer.allUsers.edges[0]['cursor'] : null;
+      this.before = beforeCursor;
       this.last = this.defaultPageSize;
       this.after = null;
       this.first = null;
@@ -104,8 +105,8 @@ export class HomeComponent implements OnInit {
                             this.first === null;
     if (mayHaveNextPage) {
       const edgeCount = this.data.viewer.allUsers.edges.length;
-      const lastCursor = (edgeCount > 0) ? this.data.viewer.allUsers.edges[edgeCount - 1]['cursor'] : null;
-      this.after = lastCursor;
+      const afterCursor = (edgeCount > 0) ? this.data.viewer.allUsers.edges[edgeCount - 1]['cursor'] : null;
+      this.after = afterCursor;
       this.first = this.defaultPageSize;
       this.before = null;
       this.last = null;
