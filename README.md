@@ -126,7 +126,7 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 ### Generating Documentation
 
 * `npm run docs`
-* This uses and [TypeDoc](http://typedoc.io/) and understand JavaDoc style tags 
+* This uses [TypeDoc](http://typedoc.io/) and understand JavaDoc style tags 
 
 ## Testing
 
