@@ -1,7 +1,7 @@
-# angular2-apollo-webpack-starter
+# angular2-apollo-client-webpack-starter
 
-A graphql ready starter kit for Angular2 using Apollo Client and Webpack. This template is built to integrate seamlessly
-with the [scaphold.io](https://scaphold.io)'s GraphQL platform.
+A graphql ready starter kit for [Angular2](https://angular.io/) using [Apollo Client](https://github.com/apollostack/apollo-client) and Webpack. This starter kit is built to seamlessly 
+integrate with the [scaphold.io](https://scaphold.io)'s powerful GraphQL-as-a-Service platform.
 
 Out of the box, the application handles authentication and exhibits pagination using GraphQL connections. The
 template also comes packed with a few other goodies.
