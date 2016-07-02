@@ -103,7 +103,7 @@ export class AuthService {
                 subscription.unsubscribe();
                 throw error;
             }).bind(this)
-        })
+        });
     }
 
     /**

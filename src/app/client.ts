@@ -16,7 +16,7 @@ networkInterface.use([
       next();
     }
   }
-])
+]);
 
 const apolloClient = new ApolloClient({
   networkInterface
