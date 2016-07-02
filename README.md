@@ -2,6 +2,8 @@
 
 [![Dependency Status](https://david-dm.org/scaphold-io/angular2-apollo-client-webpack-starter/status.svg)](https://david-dm.org/scaphold-io/angular2-apollo-client-webpack-starter#info=dependencies) [![devDependency Status](https://david-dm.org/scaphold-io/angular2-apollo-client-webpack-starter/dev-status.svg)](https://david-dm.org/scaphold-io/angular2-apollo-client-webpack-starter#info=devDependencies)
 
+## [Live Demo](https://scaphold-io.github.io/)
+
 A graphql ready starter kit for [Angular2](https://angular.io/) using [Apollo Client](https://github.com/apollostack/apollo-client) and Webpack. This starter kit is built to seamlessly 
 integrate with the [scaphold.io](https://scaphold.io)'s powerful GraphQL-as-a-Service platform.
 
