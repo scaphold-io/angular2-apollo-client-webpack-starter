@@ -1,0 +1,43 @@
+<div class="home">
+  <section class="section-auth">
+    <div class="authentication-container" *ngIf="!auth.credential.token">
+      <scaphold-register-form class="panel"></scaphold-register-form>
+      <scaphold-login-form class="panel"></scaphold-login-form>
+    </div>
+    <div *ngIf="auth.credential.token" class="logged-in panel">
+      <h3 *ngIf="auth.user">Logged in as {{auth.user.username}}</h3>
+      <a (click)="auth.logout()">Logout</a>
+    </div>
+  </section>
+  <section class="section-content">
+    <h1>Pagination with Users</h1>
+    <div>
+      <label for="defaultPageSize">Default Page Size</label>
+      <input id="defaultPageSize" type="text" [(ngModel)]="defaultPageSize">
+    </div>
+    <div class="pagination-args">
+      <label for="first">First</label>
+      <input id="first" type="number" [(ngModel)]="first">
+      <label for="after">After</label>
+      <input id="after" type="text" [(ngModel)]="after">
+      <label for="last">Last</label>
+      <input id="last" type="number" [(ngModel)]="last">
+      <label for="before">Before</label>
+      <input id="before" type="text" [(ngModel)]="before">
+    </div>
+    <div class="pagination">
+      <button (click)="getPreviousPageOfUsers()" class="btn">Previous Page</button>
+      <button (click)="getNextPageOfUsers()" class="btn">Next Page</button>
+    </div>
+    <div *ngIf="data.viewer && data.viewer.allUsers">
+      <div *ngFor="let edge of data.viewer.allUsers.edges">
+        <div class="panel">
+          <b>{{edge.node.username}}</b>
+          <div>Cursor: {{edge.cursor}}</div>
+          <div>Lase Login: {{edge.node.lastLogin}}</div>
+          <div>Created At: {{edge.node.createdAt}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

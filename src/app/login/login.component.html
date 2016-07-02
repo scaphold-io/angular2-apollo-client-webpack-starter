@@ -1,0 +1,17 @@
+<div id="login-form">
+    <h2 class="panel-header">Login</h2>
+    <div class="panel-body">
+        <input type="text" [(ngModel)]="user.username" placeholder="Username" (keyup.enter)="login()">
+        <input type="password" [(ngModel)]="user.password" placeholder="Password" (keyup.enter)="login()">
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-primary" (click)="login()">
+            Login
+        </button>
+    </div>
+    <ul class="errors">
+        <li *ngFor="let error of errors">
+            {{ error.message }}
+        </li>
+    </ul>
+</div>

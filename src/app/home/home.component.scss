@@ -1,0 +1,16 @@
+// component styles are encapsulated and only applied to their components
+.home {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.authentication-container {
+    display: flex;
+    flex-direction: row;
+    > .panel {
+        flex-grow: 1;
+    }
+}
