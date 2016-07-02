@@ -74,8 +74,8 @@ export class AuthService {
             if (errors) {
                 throw errors;
             }
-            this.setCredential(data.loginUser);
-            this.syncUser(data.loginUser.id);
+            this.setCredential(data['loginUser']);
+            this.syncUser(data['loginUser']['id']);
             return result;
         });
     }
@@ -95,7 +95,7 @@ export class AuthService {
             }
         }).subscribe({
             next: ((result: GraphQLResult) => {
-                this.setUser(result.data.getUser);
+                this.setUser(result.data['getUser']);
                 subscription.unsubscribe();
             }).bind(this),
             error: ((error: Error) => {
@@ -136,7 +136,7 @@ export class AuthService {
             if (errors) {
                 throw errors;
             }
-            this.setUser(data.createUser.changedUser);
+            this.setUser(data['createUser']['changedUser']);
             return result;
         });
     }
