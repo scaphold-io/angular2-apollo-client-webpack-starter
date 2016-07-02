@@ -16,7 +16,6 @@ template also comes packed with a few other goodies.
 * [Testing](#testing) 
 
 ## Quick start
----
 
 - Go to [scaphold.io](https://scaphold.io) and create an account.
 - Create an application and get your GraphQL API's url from the dropdown in the nav bar.
@@ -24,7 +23,7 @@ template also comes packed with a few other goodies.
 
 ```bash
 # clone our repo
-$ git clone https://github.com/scaphold-io/angular2-apollo-webpack.git my-app
+$ git clone https://github.com/scaphold-io/angular2-apollo-client-webpack-starter.git my-app
 
 # update /my-app/src/config.ts with your scaphold api url
 $ cd my-app
@@ -43,7 +42,6 @@ to build an awesome app.
 Go to [http://localhost:8080](http://localhost:8080) to start using your API.
 
 ## What's included?
----
 
 * Apollo Client - A powerful, easy to use GraphQL client.
 * Webpack - A popular, well designed module bundler for JavaScript projects.
@@ -56,7 +54,6 @@ Go to [http://localhost:8080](http://localhost:8080) to start using your API.
 * Code coverage when tests are run.
 
 ## Project Structure
----
 
 ```
 bootangular2-apollo-webpack-starter/
