@@ -35,7 +35,11 @@ template also comes packed with a few other goodies.
 
 ```bash
 # clone our repo
+# Take the master repo if you want to plug your own styling framework
 $ git clone https://github.com/scaphold-io/angular2-apollo-client-webpack-starter.git my-app
+
+# The AngularMaterial branch comes preloaded with the popular angular2-material library
+$ git clone -b AngularMaterial https://github.com/scaphold-io/angular2-apollo-client-webpack-starter.git my-app
 
 # update /my-app/src/config.ts with your scaphold api url
 $ cd my-app
