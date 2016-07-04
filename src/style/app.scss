@@ -2,6 +2,7 @@
 body {
     background: #e9ebee;
     color: #000;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 a {
@@ -12,24 +13,4 @@ a {
     padding: 15px;
     box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
     background: white;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 5px;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
-    white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    border-radius: 4px;
-    -webkit-user-select: none;
-    background-color: white;
 }

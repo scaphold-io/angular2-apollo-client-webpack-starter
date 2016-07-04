@@ -14,13 +14,20 @@ header {
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
+md-toolbar {
+  box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
+  .md-toolbar-fill-remaining-space {
+    flex: 1 1 auto;
+  }
+}
+
 main {
   padding: 1em;
-  margin-top: 50px;
   display: block;
 }
 
 footer {
   text-align: center;
   font-size: 1.0em;
+  padding-bottom: 10px;
 }

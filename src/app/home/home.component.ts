@@ -8,12 +8,16 @@ import {RegisterComponent} from '../register';
 import {LoginComponent} from '../login';
 import {AuthService} from '../shared';
 import client from '../client';
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
+import { MD_GRID_LIST_DIRECTIVES } from '@angular2-material/grid-list';
 
 @Component({
   selector: 'home-page',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  directives: [RegisterComponent, LoginComponent]
+  directives: [RegisterComponent, LoginComponent, MD_CARD_DIRECTIVES, MD_INPUT_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_GRID_LIST_DIRECTIVES]
 })
 @Apollo({
   client,

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import { MD_TOOLBAR_DIRECTIVES } from '@angular2-material/toolbar';
 
 import { AuthService } from './shared';
 
@@ -12,7 +13,7 @@ import '../style/app.scss';
 @Component({
   selector: 'my-app', // <my-app></my-app>
   providers: [AuthService],
-  directives: [...ROUTER_DIRECTIVES],
+  directives: [ROUTER_DIRECTIVES, MD_TOOLBAR_DIRECTIVES],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

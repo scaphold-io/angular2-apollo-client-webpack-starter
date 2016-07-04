@@ -1,50 +1,60 @@
 <div class="home">
-  <h1 class="title">The Angular2 & Apollo Client Starter Kit</h1>
-  <h2>A GraphQL powered Angular2 application ready to be made awesome.</h2>
-  <div class="img-container">
-    <a target="_blank" href="https://angular.io"><img src="https://angular.io/resources/images/logos/standard/shield-large.png" alt="Angular2"></a>
-    <a target="_blank" href="https://scaphold.io"><img src="https://scaphold.io/images/scaphold-logo-90x90.png" alt="Scaphold"></a>
-    <a target="_blank" href="http://docs.apollostack.com/apollo-client/index.html"><img src="http://docs.apollostack.com/logo/square.png" alt="Apollo Client"></a>
-  </div>
-  <h3>Brought to you by <a target="_blank" [href]="url">scaphold.io</a></h3>
-  <section class="section-auth">
-    <div class="authentication-container" *ngIf="!auth.credential.token">
-      <scaphold-register-form class="panel"></scaphold-register-form>
-      <scaphold-login-form class="panel"></scaphold-login-form>
-    </div>
-    <div *ngIf="auth.credential.token" class="logged-in panel">
-      <h3 *ngIf="auth.user">Logged in as {{auth.user.username}}</h3>
-      <a (click)="auth.logout()">Logout</a>
+  <section class="home-header">
+    <h1 class="title">The Angular2 & Apollo Client Starter Kit</h1>
+    <h2>A GraphQL powered Angular2 application ready to be made awesome.</h2>
+    <div class="img-container">
+      <a target="_blank" href="https://angular.io"><img src="https://angular.io/resources/images/logos/standard/shield-large.png" alt="Angular2"></a>
+      <a target="_blank" href="https://scaphold.io"><img src="https://scaphold.io/images/scaphold-logo-90x90.png" alt="Scaphold"></a>
+      <a target="_blank" href="http://docs.apollostack.com/apollo-client/index.html"><img src="http://docs.apollostack.com/logo/square.png" alt="Apollo Client"></a>
     </div>
   </section>
+  <section class="section-auth">
+    <div *ngIf="!auth.credential.token" class="authentication-container">
+      <td>
+        <scaphold-register-form></scaphold-register-form>
+      </td>
+      <td>
+        <scaphold-login-form></scaphold-login-form>
+      </td>
+    </div>
+    <md-card *ngIf="auth.credential.token">
+      <md-card-title>
+        Logged in as {{auth.user.username}}
+      </md-card-title>
+      <md-card-actions>
+        <button (click)="auth.logout()" md-button>Logout</button>
+      </md-card-actions>
+    </md-card>
+  </section>
+  <section class="pagination">
+    <md-card>
+      <md-card-title>Pagination with Users</md-card-title>
+      <md-card-content>
+        <md-input placeholder="Default Page Size" [(ngModel)]="defaultPageSize"></md-input>
+        <md-input placeholder="First" [(ngModel)]="first"></md-input>
+        <md-input placeholder="After" [(ngModel)]="after"></md-input>
+        <md-input placeholder="Last" [(ngModel)]="last"></md-input>
+        <md-input placeholder="Before" [(ngModel)]="before"></md-input>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button (click)="getPreviousPageOfUsers()" class="btn">Previous</button>
+        <button md-button (click)="getNextPageOfUsers()" class="btn">Next</button>
+      </md-card-actions>
+    </md-card>
+  </section>
   <section class="section-content">
-    <h1>Pagination with Users</h1>
-    <div>
-      <label for="defaultPageSize">Default Page Size</label>
-      <input id="defaultPageSize" type="text" [(ngModel)]="defaultPageSize">
-    </div>
-    <div class="pagination-args">
-      <label for="first">First</label>
-      <input id="first" type="number" [(ngModel)]="first">
-      <label for="after">After</label>
-      <input id="after" type="text" [(ngModel)]="after">
-      <label for="last">Last</label>
-      <input id="last" type="number" [(ngModel)]="last">
-      <label for="before">Before</label>
-      <input id="before" type="text" [(ngModel)]="before">
-    </div>
-    <div class="pagination">
-      <button (click)="getPreviousPageOfUsers()" class="btn">Previous</button>
-      <button (click)="getNextPageOfUsers()" class="btn">Next</button>
-    </div>
     <div *ngIf="data.viewer && data.viewer.allUsers">
       <div *ngFor="let edge of data.viewer.allUsers.edges">
-        <div class="panel">
-          <b>{{edge.node.username}}</b>
-          <div>Cursor: {{edge.cursor}}</div>
-          <div>Last Login: {{edge.node.lastLogin}}</div>
-          <div>Created At: {{edge.node.createdAt}}</div>
-        </div>
+        <md-card>
+          <md-card-title>{{edge.node.username}}</md-card-title>
+          <md-card-content>
+            <div>Cursor: {{edge.cursor}}</div>
+            <div>Last Login: {{edge.node.lastLogin}}</div>
+            <div>Created At: {{edge.node.createdAt}}</div>
+          </md-card-content>
+        </md-card>
+        <!--<div class="panel">
+        </div>-->
       </div>
     </div>
   </section>

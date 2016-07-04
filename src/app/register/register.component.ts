@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {GraphQLResult} from 'graphql';
 import {AuthService, IScapholdUserInput} from '../shared';
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
 
 @Component({
     selector: 'scaphold-register-form',
     templateUrl: './register.component.html',
-    styleUrls: ['./register.component.scss']
+    styleUrls: ['./register.component.scss'],
+    directives: [MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_INPUT_DIRECTIVES]
 })
 export class RegisterComponent implements OnInit {
 
