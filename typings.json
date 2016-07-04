@@ -7,6 +7,7 @@
     "node": "registry:dt/node#4.0.0+20160501135006",
     "isomorphic-fetch": "registry:dt/isomorphic-fetch#0.0.0+20160316155526",
     "graphql": "github:nitintutlani/typed-graphql#38bdf66576693dfe808a34876295e989f9199115",
-    "hammerjs": "registry:dt/hammerjs#2.0.4+20160417130828"
+    "hammerjs": "registry:dt/hammerjs#2.0.4+20160417130828",
+    "ambient": "file:./ambient.d.ts"
   }
 }
