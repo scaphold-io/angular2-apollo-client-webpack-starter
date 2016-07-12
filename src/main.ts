@@ -1,6 +1,7 @@
 import { enableProdMode } from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { ELEMENT_PROBE_PROVIDERS } from '@angular/platform-browser';
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 // Our AppComonent and routes
 import { AppComponent } from './app/app.component';
@@ -26,7 +27,9 @@ const app = bootstrap(AppComponent, [
     APOLLO_PROVIDERS,
     defaultApolloClient(apolloClient),
     APP_ROUTER_PROVIDERS,
-    ENV_PROVIDERS
+    ENV_PROVIDERS,
+    disableDeprecatedForms(),
+    provideForms()
     // { provide: LocationStrategy, useClass: HashLocationStrategy } // uncomment this to use #/ routes 
   ])
   .catch(err => console.error(err));
