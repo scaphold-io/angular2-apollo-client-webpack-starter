@@ -73,7 +73,7 @@ Go to [http://localhost:8080](http://localhost:8080) to start using your API.
 ## Project Structure
 
 ```
-bootangular2-apollo-webpack-starter/
+angular2-apollo-webpack-starter/
 ├── src/                # Project Root
 │   ├── app/            # Angular2 Application
 │   │   ├── about/      # about, home, login, register all contain Angular components
