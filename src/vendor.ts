@@ -6,6 +6,7 @@ import '@angular/common';
 import '@angular/forms';
 import '@angular/http';
 import '@angular/router';
+import '@angular/forms';
 
 // RxJS
 import 'rxjs';
@@ -18,3 +19,6 @@ import '@angular2-material/card';
 import '@angular2-material/input';
 import '@angular2-material/toolbar';
 import '@angular2-material/grid-list';
+
+// Helper grid for responsive design
+import 'bootstrap-grid';
