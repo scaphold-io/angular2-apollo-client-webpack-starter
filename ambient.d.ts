@@ -1,4 +1,12 @@
 /*
+    LODASH
+*/
+declare module 'lodash.has' {
+  import main = require('~lodash/index');
+  export = main.has;
+}
+
+/*
   GRAPHQL
 */
 declare module 'graphql/language/parser' {
