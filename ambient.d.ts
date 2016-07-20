@@ -1,5 +1,5 @@
 /*
-    LODASH
+  LODASH
 */
 declare module 'lodash.has' {
   import main = require('~lodash/index');
